@@ -9,6 +9,8 @@
 // If it is a pair programming lab please specify partner below.
 // Partner: @peteranteater
 
+#include <string>
+
 #include "astronaut.h"
 #include "crewmate.h"
 
@@ -17,9 +19,12 @@
 #ifndef IMPOSTOR_H
 #define IMPOSTOR_H
 
-// ========================= YOUR CODE HERE =========================
-// Define the Impostor class here, which inherits from the Astronaut
-// base class. Refer to the README for instructions.
-// ===================================================================
+class Impostor : public Astronaut {
+ public:
+  Impostor(const std::string& name, const graphics::Color& color);
+  Impostor();
 
-#endif  // IMPOSTOR_H
+  void Kill(Crewmate& crewmate) const;
+};
+
+#endif

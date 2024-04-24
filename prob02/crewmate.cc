@@ -1,9 +1,9 @@
 // Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Jemin Song
+// CPSC 121L-02
+// 4/24/2024
+// jeminsong0119@csu.fullerton.edu
+// @jeminsong
 //
 // Lab 12-2
 // If it is a pair programming lab please specify partner below.
@@ -13,14 +13,41 @@
 
 #include <iostream>
 
-// ========================= YOUR CODE HERE =========================
-// This implementation file is where you should implement the member
-// functions declared in the header, only if you didn't implement
-// them inline in the header.
-//
-// Remember to specify the name of the class with :: in this format:
-//     <return type> MyClassName::MyFunction() {
-//        ...
-//     }
-// to tell the compiler that each function belongs to the Crewmate class.
-// ===================================================================
+Crewmate::Crewmate(const std::string& name, const graphics::Color& color)
+    : Astronaut(name, color), alive_(true), task_count_(0) {}
+
+Crewmate::Crewmate()
+    : Astronaut("No Name", graphics::Color(0, 0, 0)),
+      alive_(true),
+      task_count_(0) {}
+
+bool Crewmate::GetIsAlive() const { return alive_; }
+
+void Crewmate::SetIsAlive(bool alive) { alive_ = alive; }
+
+int Crewmate::GetTaskCount() const { return task_count_; }
+
+void Crewmate::DoTask(const std::string& task) {
+  task_count_++;
+  std::cout << GetName() << " is doing " << task << std::endl;
+}
+
+graphics::Color Crewmate::GetColor() const {
+  if (alive_) {
+    return Astronaut::GetColor();
+  } else {
+    graphics::Color baseColor = Astronaut::GetColor();
+    graphics::Color shifted((baseColor.Red() + 256) / 2,
+                            (baseColor.Green() + 256) / 2,
+                            (baseColor.Blue() + 256) / 2);
+    return shifted;
+  }
+}
+
+std::string Crewmate::GetIconFilename() const {
+  if (alive_) {
+    return "astronaut.bmp";
+  } else {
+    return "ghost.bmp";
+  }
+}

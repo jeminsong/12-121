@@ -1,8 +1,8 @@
 // Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
+// Jemin Song
+// PSC 121L-02
+// 04/24/24
+// jeminsong0119@csu.fullerton.edu
 // <Your GitHub username>
 //
 // Lab 12-2
@@ -11,14 +11,11 @@
 
 #include "astronaut.h"
 
-// ========================= YOUR CODE HERE =========================
-// This implementation file is where you should implement the member
-// functions declared in the header, only if you didn't implement
-// them inline in the header.
-//
-// Remember to specify the name of the class with :: in this format:
-//     <return type> MyClassName::MyFunction() {
-//        ...
-//     }
-// to tell the compiler that each function belongs to the Astronaut class.
-// ===================================================================
+Astronaut::Astronaut(const std::string& name, const graphics::Color& color)
+    : name_(name), color_(color) {}
+
+const std::string& Astronaut::GetName() const { return name_; }
+
+const graphics::Color& Astronaut::GetColor() const { return color_; }
+
+std::string Astronaut::GetIconFilename() const { return "astronaut.bmp"; }

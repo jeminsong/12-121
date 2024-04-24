@@ -1,9 +1,9 @@
 // Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Jemin Song
+// CPSC 121L-02
+// 04/24/2024
+// jeminsong0119@csu.fullerton.edu
+// @jeminsong
 //
 // Lab 12-2
 // If it is a pair programming lab please specify partner below.
@@ -18,8 +18,18 @@
 #ifndef ASTRONAUT_H
 #define ASTRONAUT_H
 
-// ========================= YOUR CODE HERE =========================
-// Define the Astronaut class here. Refer to the README for instructions.
-// ===================================================================
+class Astronaut {
+ public:
+  Astronaut(const std::string& name, const graphics::Color& color);
+
+  const std::string& GetName() const;
+  const graphics::Color& GetColor() const;
+
+  virtual std::string GetIconFilename() const;
+
+ private:
+  std::string name_;
+  graphics::Color color_;
+};
 
 #endif  // ASTRONAUT_H

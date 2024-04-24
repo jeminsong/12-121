@@ -1,13 +1,15 @@
 // Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Jemin Song
+// CPSC 121L-02
+// 4.24/2024
+// jeminsong0119@csu.fullerton.edu
+// @jeminsong
 //
 // Lab 12-2
 // If it is a pair programming lab please specify partner below.
 // Partner: @peteranteater
+
+#include <string>
 
 #include "astronaut.h"
 
@@ -16,9 +18,23 @@
 #ifndef CREWMATE_H
 #define CREWMATE_H
 
-// ========================= YOUR CODE HERE =========================
-// Define the Crewmate class here, which inherits from the Astronaut
-// base class. Refer to the README for instructions.
-// ===================================================================
+class Crewmate : public Astronaut {
+ public:
+  Crewmate(const std::string& name, const graphics::Color& color);
+  Crewmate();
+
+  bool GetIsAlive() const;
+  void SetIsAlive(bool alive);
+  int GetTaskCount() const;
+  void DoTask(const std::string& task);
+
+  graphics::Color GetColor() const;
+
+  std::string GetIconFilename() const override;
+
+ private:
+  bool alive_;
+  int task_count_;
+};
 
 #endif  // CREWMATE_H
