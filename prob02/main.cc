@@ -40,7 +40,7 @@ void DrawAstronautIcon(const Astronaut& astronaut, int x, int y,
                        graphics::Image& image) {
   graphics::Image icon;
   icon.Load(astronaut.GetIconFilename());
-  graphics::Color color1 = astronaut.GetColor();
+  const graphics::Color& color1 = astronaut.GetColor();
   graphics::Color color2(color1.Red() / 2, color1.Green() / 2,
                          color1.Blue() / 2);
   for (int i = 0; i < icon.GetWidth(); i++) {
